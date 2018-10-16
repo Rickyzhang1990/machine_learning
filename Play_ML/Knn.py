@@ -1,6 +1,9 @@
 import numpy as np 
 from math import sqrt 
 
+
+
+
 class Knn:
   '''
   bulid my own knn 
