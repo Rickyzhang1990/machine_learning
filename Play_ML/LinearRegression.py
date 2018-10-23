@@ -52,7 +52,7 @@ class SimpleLinearRegression2:
 #   for x ,y in zip(x_train ,y_train):
 #    num += (x - x_mean)*(y-y_mean)
 #    d += (x-x_mean)**2
-    num = (x_train - y_mean).dot(y_train - y_mean)
+    num = (x_train - x_mean).dot(y_train - y_mean)
     d = (x_train - x_mean).dot(x_train - x_mean)
     self.a_ = num/d
     self.b_ = y_mean = self.a_ * x_mean
