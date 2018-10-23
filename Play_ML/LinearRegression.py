@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 class SimpleLinearRegression1:
   
-  def__inint__(self):
+  def __init__(self):
     self.a_ = None 
     self.b_ = None 
     
@@ -36,8 +36,11 @@ class SimpleLinearRegression1:
     return "SimpleLinearRegression()"
     
 class SimpleLinearRegression2:
+  """
+  向量化运算的速度大约是50倍的使用for循环的方法
+  """
   
-  def__inint__(self):
+  def __init__(self):
     self.a_ = None 
     self.b_ = None 
     
