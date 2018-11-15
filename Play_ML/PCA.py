@@ -43,17 +43,17 @@ class PCA:
             X_pca = X_pca - X_pca.dot(w).reshape（-1，1） * w 
         return self 
         
-        def transform(self , X):
-            """将给定的X，映射到各个主成分中"""
-            assert X.shape[1] == self.components_.shape[1]
+    def transform(self , X):
+        """将给定的X，映射到各个主成分中"""
+        assert X.shape[1] == self.components_.shape[1]
+           
+        return X.dot(self.components_.T)
             
-            return X.dot(self.components_.T)
+    def invers_tranform(self , X):
+        """将给定的X，反射到原来的特征空间中"""
+        assert X.shape[1] == self.components_.shape[0]
             
-        def invers_tranform(self , X):
-            """将给定的X，反射到原来的特征空间中"""
-            assert X.shape[1] == self.components_.shape[0]
-            
-            return X.dot(self.components_)
-        def __repr__(self):
-            return "PCA(n_components = %d)" self.%n_components
+        return X.dot(self.components_)
+    def __repr__(self):
+        return "PCA(n_components = %d)" self.%n_components
             
