@@ -34,13 +34,13 @@ class Knn:
   def _predict(x):
     """给定单个待预测的数据x，但会x的预测结果"""
     assert x.shape[0] == self._X_train.shape[1]
-    distances =[sqrt(np.sum((x_train - x)**2)) for x_train in self._X_train]
-    nearest = np.argsort(distances)
+    distances =[sqrt(np.sum((x_train - x)**2)) for x_train in self._X_train]   #计算欧氏距离
+    nearest = np.argsort(distances)  #按照distance进行排序
     
-    topK_y = [sefl._y_train[i] for i in nearest[:self.k]]
-    votes = Counter(topK_y)
+    topK_y = [sefl._y_train[i] for i in nearest[:self.k]]  #取出最前面排序的k个分类值
+    votes = Counter(topK_y)  #统计最近的k个数据的类别
     
-    return votes.most_cpmmon(1)[0][0]
+    return votes.most_cpmmon(1)[0][0]  #找到最近的k个点最多的类别
   
   def __repr__(self):
     return "KNN(k=%d)"%self.k
