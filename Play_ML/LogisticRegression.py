@@ -18,7 +18,7 @@ class LogisticRegression:
         
         def J(theta,X_b , y):
             y_hat = self._sigmoid(X_b.dot(theta))
-            try]
+            try：
                 return np.sum(y*np.log(y_hat) + (1-y)*np.log(1-y_hat)/len(y))
             except:
                 return float('inf')
